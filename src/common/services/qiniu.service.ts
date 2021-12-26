@@ -26,7 +26,10 @@ export class QiniuService {
     }
     const putPolicy = new qiniu.rs.PutPolicy({
       scope: `${bucket}:${key}`,
-      expires: Number(tokenExpires) || 3600,
+      expires: Number(tokenExpires) || 10,
+      fsizeMin: 1,
+      fsizeLimit: 10 * 1024 * 1024,
+      mimeLimit: 'application/json',
     });
     return putPolicy.uploadToken(this.mac);
   }
