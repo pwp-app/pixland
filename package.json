@@ -1,9 +1,14 @@
 {
   "name": "pixland",
   "version": "0.0.1",
-  "description": "Store pixiv related data",
+  "description": "A storage solution for storing pixiv related data",
   "author": "BackRunner",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pwp-app/pixland"
+  },
+  "homepage": "https://github.com/pwp-app/pixland",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
