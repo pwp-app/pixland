@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import qiniu from 'qiniu';
+import * as qiniu from 'qiniu';
 
 @Injectable()
 export class QiniuService {
