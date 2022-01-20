@@ -20,7 +20,7 @@ class GetUploadTokenBody {
 export class UserDataController {
   constructor(private qiniuService: QiniuService) {}
 
-  @Post()
+  @Post('getUploadToken')
   getUploadToken(@Body() body: GetUploadTokenBody) {
     const { username, password, timestamp, sign } = body;
     // validate request first
