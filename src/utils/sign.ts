@@ -1,4 +1,4 @@
-import crypto from 'crypto';
+import * as crypto from 'crypto';
 
 export const validateRequest = ({ data, sign, timestamp }: { data: unknown; sign: string; timestamp: number }) => {
   if (Date.now() - timestamp > 10 * 1000) {
