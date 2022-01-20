@@ -5,7 +5,13 @@ import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify
 import { AppModule } from './app.module';
 
 async function bootstrap() {
-  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter());
+  const app = await NestFactory.create<NestFastifyApplication>(AppModule, new FastifyAdapter(), {
+    cors: {
+      origin: 'https://pixiviz.pwp.app',
+      credentials: true,
+      methods: ['GET', 'POST'],
+    },
+  });
   const configService = app.get<ConfigService>(ConfigService);
   // add validation pipe
   app.useGlobalPipes(
