@@ -25,7 +25,7 @@ export class QiniuService {
       throw new Error('Cannot get the bucket name.');
     }
     const putPolicy = new qiniu.rs.PutPolicy({
-      scope: `${bucket}:userdata/${key}`,
+      scope: `${bucket}:${key}`,
       expires: Number(tokenExpires) || 10,
       fsizeMin: 1,
       fsizeLimit: 10 * 1024 * 1024,
