@@ -38,7 +38,7 @@ export class UserDataController {
     }
     // get and return the upload key
     return new SuccessResponse({
-      upload_token: this.qiniuService.getUploadToken(getFileKey(username, password)),
+      upload_token: this.qiniuService.getUploadToken(`userData/${getFileKey(username, password)}`),
     });
   }
 }
